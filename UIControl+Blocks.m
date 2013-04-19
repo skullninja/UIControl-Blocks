@@ -59,7 +59,7 @@ static const char *UIControlBlocks = "C573F3BB-5F2E-4192-B6B9-AB4E8ED8AC3A";
     if (blockActions) {
         NSMutableArray *actionsForControlEvents = [blockActions objectForKey:[NSNumber numberWithInt:controlEvents]];
         if (actionsForControlEvents) {
-            for (int i = [actionsForControlEvents count]; i > 0; i--) {
+            for (int i = [actionsForControlEvents count] - 1; i > 0; i--) {
                 UIControlActionBlockWrapper *target = (UIControlActionBlockWrapper *)[actionsForControlEvents objectAtIndex:i];
                 [self removeTarget:target action:@selector(invokeBlock:) forControlEvents:controlEvents];
                 [actionsForControlEvents removeObjectAtIndex:i];
